@@ -57,6 +57,8 @@ extern "C" {
 #define WS2811_STRIP_GBR                         0x00080010
 #define WS2811_STRIP_BRG                         0x00001008
 #define WS2811_STRIP_BGR                         0x00000810
+// 4 color R, G, B and W ordering
+#define WS2811_STRIP_GRBW                        0x10081000
 
 // predefined fixed LED types
 #define WS2812_STRIP                             WS2811_STRIP_GRB

@@ -390,7 +390,8 @@ static const rpi_hw_t rpi_hw_info[] = {
 
 const rpi_hw_t *rpi_hw_detect(void)
 {
-    const rpi_hw_t *result = NULL;
+    //const rpi_hw_t *result = NULL;
+    const rpi_hw_t *result = &rpi_hw_info[0];
     uint32_t rev;
     unsigned i;
 

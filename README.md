@@ -1,5 +1,7 @@
-rpi_ws281x
+rpi_ws281x for NanoPi Neo Air
 ==========
+
+This Fork of rpi_ws281x includes the modifications from [FlauschBert]([FlauschBert](https://github.com/jgarff/rpi_ws281x/issues/293#issuecomment-471752030)) to get it running with a WS2812 LED-Strip on a NanoPi Neo Air using SPI. It's still a hacky solution, use at own risk.
 
 Userspace Raspberry Pi library for controlling WS281X LEDs.
 This includes WS2812 and SK6812RGB RGB LEDs

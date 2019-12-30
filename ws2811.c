@@ -1196,10 +1196,15 @@ ws2811_return_t  ws2811_render(ws2811_t *ws2811)
                         if ((driver_mode != PWM) && channel->invert) symbol = SYMBOL_HIGH_INV;
                     }
 
+                    // first byte has to be zero before color bgr for spi
+                    volatile uint8_t  *byteptr = &pxl_raw[0];    // SPI
+                    *byteptr = 0;
+
                     for (l = 2; l >= 0; l--)               // Symbol
                     {
                         uint32_t *wordptr = &((uint32_t *)pxl_raw)[wordpos];   // PWM & PCM
-                        volatile uint8_t  *byteptr = &pxl_raw[bytepos];    // SPI
+                        //volatile uint8_t  *byteptr = &pxl_raw[bytepos];    // SPI
+                        volatile uint8_t  *byteptr = &pxl_raw[bytepos+1];    // SPI
 
                         if (driver_mode == SPI)
                         {
