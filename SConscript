@@ -42,6 +42,7 @@ lib_srcs = Split('''
     rpihw.c
 ''')
 
+output_name = 'led'
 version_hdr = tools_env.Version('version')
 ws2811_lib = tools_env.Library('libws2811', lib_srcs)
 tools_env['LIBS'].append(ws2811_lib)
@@ -49,7 +50,7 @@ tools_env['LIBS'].append(ws2811_lib)
 # Shared library (if required)
 ws2811_slib = tools_env.SharedLibrary('libws2811', lib_srcs)
 
-# Test Program
+# Main Program
 srcs = Split('''
     main.c
 ''')
@@ -58,9 +59,9 @@ objs = []
 for src in srcs:
    objs.append(tools_env.Object(src))
 
-test = tools_env.Program('test', objs + tools_env['LIBS'])
+main = tools_env.Program(output_name, objs + tools_env['LIBS'])
 
-Default([test, ws2811_lib])
+Default([main, ws2811_lib])
 
 package_version = "1.1.0-1"
 package_name = 'libws2811_%s' % package_version
