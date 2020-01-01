@@ -67,6 +67,7 @@ static char VERSION[] = "XX.YY.ZZ";
 #define WIDTH                   8
 #define HEIGHT                  1
 #define LED_COUNT               (WIDTH * HEIGHT)
+#define BRIGHTNESS				128
 
 int width = WIDTH;
 int height = HEIGHT;
@@ -85,7 +86,7 @@ ws2811_t ledstring =
             .gpionum = GPIO_PIN,
             .count = LED_COUNT,
             .invert = 0,
-            .brightness = 255,
+            .brightness = BRIGHTNESS,
             .strip_type = STRIP_TYPE,
         },
         [1] =
