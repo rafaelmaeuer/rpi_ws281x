@@ -73,7 +73,7 @@ int width = WIDTH;
 int height = HEIGHT;
 int led_count = LED_COUNT;
 
-int clear_on_exit = 0;
+int clear_on_exit = 1;			
 
 ws2811_t ledstring =
 {
