@@ -170,7 +170,7 @@ ws2811_led_t dotcolors_rgbw[] =
 
 };
 
-void matrix_bottom(void)
+void matrix_rainbow(void)
 {
     int i;
 
@@ -395,7 +395,7 @@ int main(int argc, char *argv[])
     while (running)
     {
         matrix_raise();
-        matrix_bottom();
+        matrix_rainbow();
         matrix_render();
 
         if ((ret = ws2811_render(&ledstring)) != WS2811_SUCCESS)
